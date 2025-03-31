@@ -4,9 +4,12 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-// Instead of importing image files that don't exist yet, use placeholder URLs
-// These can be replaced with actual imported images once they're added to the project
-const achievementPlaceholder = "https://placehold.co/600x400/2a2a2a/915eff?text=Achievement";
+// Use placeholder images until actual achievement images are added
+const achievementImages = {
+  cyberPrism1: "https://placehold.co/600x400/2a2a2a/915eff?text=Cyber+Prism+1",
+  cyberPrism2: "https://placehold.co/600x400/2a2a2a/915eff?text=Cyber+Prism+2",
+  cyberPrism3: "https://placehold.co/600x400/2a2a2a/915eff?text=Cyber+Prism+3"
+};
 
 // Remove the localStorage clearing code to ensure data persistence
 // Only initialize the storage on first load if needed
@@ -921,7 +924,7 @@ const AchievementCard = ({ index, id, title, description, image, likes: initialL
       >
         <div className="relative w-full h-[230px] overflow-hidden rounded-2xl">
           <ImageWithLoader
-            src={image || achievementPlaceholder}
+            src={image || achievementImages[id.replace('-', '')]}
             alt={title}
             className="w-full h-full object-cover"
             variants={imageVariants}
@@ -1157,7 +1160,7 @@ const Achievements = () => {
       id: "cyber-prism-1",
       title: "🌟 Proud to Share My Achievement at Cyber Prism 🌟",
       description: "Received a certificate for outstanding performance at the Cyber Prism Workshop.",
-      image: achievementPlaceholder,
+      image: achievementImages.cyberPrism1,
       likes: 12,
       comments: null
     },
@@ -1165,7 +1168,7 @@ const Achievements = () => {
       id: "cyber-prism-2",
       title: "Excited to Announce My Achievement",
       description: "Successfully completed the Cyber Prism Workshop and received certification.",
-      image: achievementPlaceholder,
+      image: achievementImages.cyberPrism2,
       likes: 5,
       comments: "1 comment"
     },
@@ -1173,7 +1176,7 @@ const Achievements = () => {
       id: "cyber-prism-3",
       title: "Secured 3rd Place in Cyber Prism Workshop",
       description: "Honored to have achieved third place in this competitive event.",
-      image: achievementPlaceholder,
+      image: achievementImages.cyberPrism3,
       likes: 5,
       comments: null
     },
@@ -1181,7 +1184,7 @@ const Achievements = () => {
       id: "python-course",
       title: "GOOGLE'S CRASH COURSE ON PYTHON",
       description: "Successfully completed a 32-hour Python course on Coursera with a 91.50% grade. Excited to apply my skills in real-world projects!",
-      image: achievementPlaceholder,
+      image: achievementImages.pythonCourse,
       likes: 6,
       comments: null
     },
@@ -1189,7 +1192,7 @@ const Achievements = () => {
       id: "aws-cert",
       title: "AWS Cloud Technical Essentials",
       description: "Earned the AWS Cloud Technical Essentials certificate from Coursera, covering IAM, AWS networking, cloud computing, and security.",
-      image: achievementPlaceholder,
+      image: achievementImages.awsCert,
       likes: 8,
       comments: null
     }
