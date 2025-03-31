@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pritesh Haryan's Portfolio - Professional Web Developer specializing in modern web technologies" />
+    <meta name="author" content="Pritesh Haryan" />
+    <meta name="keywords" content="web development, web design, portfolio, frontend, backend, react, javascript, three.js" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/src/assets/herobg.png" as="image" />
+    <link rel="preload" href="/src/assets/logo.svg" as="image" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style" />
+    
+    <!-- Font preloading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <title>Madhur Haryan | Portfolio</title>
+    
+    <!-- Inline critical CSS -->
+    <style>
+      /* Critical CSS for initial render */
+      .canvas-loader {
+        display: block;
+        width: 48px;
+        height: 48px;
+        margin: auto;
+        border-radius: 50%;
+        border: 3px solid #ddd;
+        border-top-color: #6b21a8;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Prevent layout shift */
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- App loading indicator -->
+      <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+        <div class="canvas-loader"></div>
+      </div>
+    </div>
+    
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Preload important JavaScript files -->
+    <link rel="modulepreload" href="/src/components/Hero.jsx">
+    <link rel="modulepreload" href="/src/components/Navbar.jsx">
+  </body>
+</html>

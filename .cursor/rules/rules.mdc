@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+- Keep your codebase clean to prevent slowdowns.  
+- Provide relevant context so AI understands your project.  
+- Enable autocomplete and inline suggestions in settings.  
+- Avoid making multiple requests at once for better processing.  
+- Be clear and specific in prompts, breaking down tasks.  
+- Review AI-generated code before implementing it.  
+- Test all suggestions in a safe environment.  
+- Verify external dependencies before using them.  
+- Paste full error messages and describe previous attempts when debugging.  
+- Ask for explanations if AI suggestions are unclear.  
+- Keep Cursor AI updated for optimal performance.  
+- Customize AI settings, including verbosity and preferred languages.

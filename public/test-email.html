@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmailJS Test</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // Initialize EmailJS with your public key
+      emailjs.init("uA87hnLDqo7V2rrMK");
+    })();
+
+    function sendTestEmail() {
+      const currentTime = new Date().toLocaleString();
+      const templateParams = {
+        from_name: "Test User",
+        from_email: "test@example.com",
+        message: "This is a test email to verify EmailJS functionality",
+        to_name: "Madhur Haryan",
+        to_email: "haryanmadhur@gmail.com",
+        time: currentTime,
+        subject: "Test Email from Portfolio",
+        reply_to: "test@example.com",
+        website: "Portfolio Website Test"
+      };
+
+      document.getElementById("status").textContent = "Sending test email...";
+      
+      emailjs.send("service_ijilvpi", "template_xegmu95", templateParams)
+        .then(function(response) {
+          console.log("SUCCESS!", response.status, response.text);
+          document.getElementById("status").textContent = "Email sent successfully! Check your inbox.";
+          document.getElementById("status").style.color = "green";
+        }, function(error) {
+          console.log("FAILED...", error);
+          document.getElementById("status").textContent = "Failed to send email: " + JSON.stringify(error);
+          document.getElementById("status").style.color = "red";
+        });
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 20px 0;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    #status {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+    }
+  </style>
+</head>
+<body>
+  <h1>EmailJS Test</h1>
+  <p>This page tests whether EmailJS is correctly sending emails to the admin (haryanmadhur@gmail.com).</p>
+  <button onclick="sendTestEmail()">Send Test Email</button>
+  <div id="status">Click the button to send a test email.</div>
+</body>
+</html> 
