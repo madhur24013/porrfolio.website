@@ -8,7 +8,9 @@ import { fadeIn, textVariant } from "../utils/motion";
 const achievementImages = {
   cyberPrism1: "https://placehold.co/600x400/2a2a2a/915eff?text=Cyber+Prism+1",
   cyberPrism2: "https://placehold.co/600x400/2a2a2a/915eff?text=Cyber+Prism+2",
-  cyberPrism3: "https://placehold.co/600x400/2a2a2a/915eff?text=Cyber+Prism+3"
+  cyberPrism3: "https://placehold.co/600x400/2a2a2a/915eff?text=Cyber+Prism+3",
+  pythonCourse: "https://placehold.co/600x400/2a2a2a/915eff?text=Python+Course",
+  awsCert: "https://placehold.co/600x400/2a2a2a/915eff?text=AWS+Certification"
 };
 
 // Remove the localStorage clearing code to ensure data persistence
